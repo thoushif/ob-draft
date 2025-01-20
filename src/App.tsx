@@ -1,16 +1,24 @@
 import React, { ReactElement, useState } from 'react'
-import Space from './components/space'
-import MainProvider from './context/MainProvider'
+import ErrorBoundary from './pages/ErrorBoundary'
+import { AuthProvider } from './context/AuthContext'
+import { Outlet } from 'react-router-dom'
+
 
 function App(): ReactElement {
-  
+
 
   return (
-    <div className="p-20 border shadow-xl border-gray-50 rounded-xl">
-       <MainProvider>
-         <Space />
-      </MainProvider>
-    </div>
+    <ErrorBoundary>
+
+      <AuthProvider>
+
+
+        <div className="fixed inset-0 flex flex-col items-center justify-center gap-4 bg-gray1 dark:bg-dark-blue1">
+          <Outlet />
+        </div>
+
+      </AuthProvider>
+    </ErrorBoundary>
   )
 }
 

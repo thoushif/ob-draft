@@ -2,9 +2,12 @@ import React, { ReactElement, useContext, useState, useEffect } from 'react'
 import { UserPositionContext } from '../context/UserPositionProvider';
 import { SpaceContext } from '../context/SpaceProvider';
 import './space.css';
+import { Databases, Query } from "appwrite";
 import { useParams } from 'react-router-dom';
 
 
+const DATABASE_ID = '67895fec00321e95d069';
+const COLLECTION_ID = '678ae9860036891d08fe';
 const Space = (): ReactElement => {
 
   const { size, capacity } = useContext(SpaceContext);

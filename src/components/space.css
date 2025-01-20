@@ -48,3 +48,7 @@
     animation: shake 0.5s;
     animation-iteration-count: 1;
 }
+
+.no-scroll {
+    overflow: hidden;
+}
